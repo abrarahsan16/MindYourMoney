@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Mar 04 13:11:17 EST 2017
+#Sat Mar 04 14:14:57 EST 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/resources-debug.ap_/res/layout/notification_template_media_custom.xml
 14.set=ANDROID_RESOURCE
