@@ -36,6 +36,10 @@
         "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_share.xml"
     },
     {
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_plus.png",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_plus.png"
+    },
+    {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_manage.xml",
         "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_manage.xml"
     },

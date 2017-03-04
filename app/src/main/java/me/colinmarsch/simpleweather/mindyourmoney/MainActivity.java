@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.ViewFlipper;
 
 import static android.R.attr.fragment;
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.fab;
 import static me.colinmarsch.simpleweather.mindyourmoney.R.id.vf;
 
 public class MainActivity extends AppCompatActivity
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.add_category) {
             return true;
         }
 
@@ -91,13 +92,20 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         if (id == R.id.nav_summary) {
             vf.setDisplayedChild(0);
+            tb.getMenu().findItem(R.id.add_category).setVisible(true);
+            fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_expenses) {
             vf.setDisplayedChild(1);
+            tb.getMenu().findItem(R.id.add_category).setVisible(false);
+            fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_settings) {
             vf.setDisplayedChild(2);
+            tb.getMenu().findItem(R.id.add_category).setVisible(false);
+            fab.setVisibility(View.GONE);
         }
 
 
