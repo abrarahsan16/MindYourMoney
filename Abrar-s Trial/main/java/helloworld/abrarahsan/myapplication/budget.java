@@ -13,4 +13,14 @@ public class budget extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
 
-    }}
+        Button btnComp = (Button) findViewById(R.id.btnComplete);
+        //Action when pressed
+        btnComp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent btnComp = new Intent(budget.this, category.class);
+                startActivity(btnComp);
+            }
+        });
+    }
+}

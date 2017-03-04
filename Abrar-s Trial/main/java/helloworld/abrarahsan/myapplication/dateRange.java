@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class dateRange extends AppCompatActivity {
+    int nYear, nMonth, nDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +19,10 @@ public class dateRange extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent budget= new Intent(dateRange.this,budget.class);
+                Intent budget = new Intent(dateRange.this, budget.class);
                 startActivity(budget);
             }
         });
+
     }
 }
