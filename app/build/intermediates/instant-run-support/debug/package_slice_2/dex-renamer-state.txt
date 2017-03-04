@@ -1,0 +1,4 @@
+#Sat Mar 04 13:11:15 EST 2017
+base.0=/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2
+renamed.0=classes.dex
+file.0=/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex

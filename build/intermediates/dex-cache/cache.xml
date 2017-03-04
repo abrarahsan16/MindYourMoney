@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.1/constraint-layout-solver-1.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.1_139a03ef8010fe6aff941c54466c6c18c9f4cea0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/1134967b44d7df530cbb0e956ef3fb4c4b6fd7bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_525213fdbf74a4184b617b047c349a187dc13448/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b9499de3c4f4e0a337ce50ab380d8a06c940855">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_51c4839e9ceea679163591ce55b6a12c4de97445/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/07e877dad9fd4cbb4a9fc7041b186e1fab919508/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b660fd1717eedcd75a9b698008a2eb58653cee13/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/01b41a0e444c5bb055c52b49f81dac840edbe45d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9da9d6f51417ede6a8df5c880ba54fa7042b6e7b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/9f340f494250cec8e266d23394f6259b616b2c19/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7113302c965566b66df46c6ca75ea301576114a5">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8b84adb21264ab106c4bc65bea57c453d53b3d5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/2b9de06c989c6d87c75cebb4bccf7ff1351886a6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_671e39e94fa98aca2f677502c771016054286c05/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_478de7d95f9277fe9bf492307ab25726b7056094/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/b8a98f6924779a12b087e65d5e41bb8eefde9ff0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_947cbee84d106c6e7706f7c7de51cba7741ada5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/b5540c60a4164ed202d041152832523fce2a24a2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a113308442a7c93d5ca54253347276e54bc02d9e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/ebb96151c38f5ec66930fcc23690715ba8970d33/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2fac76eeec082d1e4eeb0e7ee04144ad09a73d5c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_603bfc6e40ec0878fcd8268b9ca6d1a589228725/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cd2ddba56123a82047cce335b8459f5ee86487dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/f135e76a4f1a4b115389e3d00dc3e1c90db15108/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c90b4937ea7d10f0d3beadb1f5a73f0ff3380e94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/56fa7722479d3fb0d75b7de232e5c82ecc9911bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_660ecfb4052cfa59fecc4db32948b357b3636319/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_b66440e67fc56832f7e6716ef0ad3339075e339d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/colinmarsch/.android/build-cache/72a9d67cf5d0ba857c128f98408ce040bd7dc7bd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7b0c9fe5f03e021533533ed918b7f1298717f0be/classes.dex" />
+    </item>
+
+</items>
