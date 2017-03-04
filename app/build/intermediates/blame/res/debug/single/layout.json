@@ -60,6 +60,10 @@
         "source": "/Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/settings.xml",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/layout/settings.xml"
+    },
+    {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/layout/abc_action_mode_close_item_material.xml"
     },
@@ -70,6 +74,10 @@
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/content_expenses.xml",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/layout/content_expenses.xml"
     },
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",

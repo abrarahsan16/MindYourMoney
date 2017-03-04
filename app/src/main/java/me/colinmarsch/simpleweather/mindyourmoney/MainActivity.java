@@ -14,16 +14,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ViewFlipper;
+
+import static android.R.attr.fragment;
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.vf;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    FragmentManager fm = getSupportFragmentManager();
+    ViewFlipper vf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        vf = (ViewFlipper) findViewById(R.id.vf);
+        vf.setDisplayedChild(0);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -83,16 +91,15 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Fragment fragment = new Fragment();
+
         if (id == R.id.nav_summary) {
-            fragment = new Summary();
+            vf.setDisplayedChild(0);
         } else if (id == R.id.nav_expenses) {
-            fragment = new Expenses();
+            vf.setDisplayedChild(1);
         } else if (id == R.id.nav_settings) {
-            fragment = new Settings();
+            vf.setDisplayedChild(2);
         }
 
-        fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
