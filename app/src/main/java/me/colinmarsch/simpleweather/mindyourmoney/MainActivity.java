@@ -23,10 +23,6 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static android.R.attr.data;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.budget_field;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

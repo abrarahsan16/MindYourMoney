@@ -4,14 +4,6 @@
         "source": "/Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/res/drawable-v21/design_password_eye.xml"
     },
     {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_gallery.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_gallery.xml"
-    },
-    {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_slideshow.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_slideshow.xml"
-    },
-    {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
         "source": "/Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/res/drawable-v21/avd_hide_password.xml"
     },
@@ -20,28 +12,24 @@
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_send.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_send.xml"
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_attach_money_black_24dp.png",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_attach_money_black_24dp.png"
     },
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_camera.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_camera.xml"
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_settings_black_24dp.png",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_settings_black_24dp.png"
     },
     {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_share.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_share.xml"
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_home_black_24dp.png",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_home_black_24dp.png"
     },
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_plus.png",
         "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_plus.png"
-    },
-    {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_manage.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable-v21/ic_menu_manage.xml"
     },
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
