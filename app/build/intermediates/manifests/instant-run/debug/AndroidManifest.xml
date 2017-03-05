@@ -38,6 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="me.colinmarsch.simpleweather.mindyourmoney.Payment" />
 
         <service
             android:name="com.android.tools.fd.runtime.InstantRunService"

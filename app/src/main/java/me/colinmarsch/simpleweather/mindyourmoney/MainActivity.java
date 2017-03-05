@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import static java.lang.reflect.Array.getInt;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,10 +30,17 @@ public class MainActivity extends AppCompatActivity
     ArrayList<Integer> balances;
     String[] sections;
     Integer[] sums;
+
+    ArrayList<String> transHist;
+    String[] transHistArr;
     CategoryListAdapter adapter;
-    private static final String PREFERENCE_FILE_KEY =
-            "me.colinmarsch.simpleweather.mindyourmoney.preference-file_key";
-    SharedPreferences sharedPref;
+    ArrayAdapter adapter1;
+    private static final String SUMM_PREFERENCE_FILE_KEY =
+            "me.colinmarsch.simpleweather.mindyourmoney.sum_key";
+    private static final String LOG_PREFERENCE_FILE_KEY =
+            "me.colinmarsch.simpleweather.mindyourmoney.log_key";
+    SharedPreferences sharedPrefSumm;
+    SharedPreferences sharedPrefLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +70,31 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        sharedPref = this.getSharedPreferences(PREFERENCE_FILE_KEY, MODE_PRIVATE);
+        sharedPrefSumm = this.getSharedPreferences(SUMM_PREFERENCE_FILE_KEY, MODE_PRIVATE);
+        sharedPrefLog = this.getSharedPreferences(LOG_PREFERENCE_FILE_KEY, MODE_PRIVATE);
 
         categories = new ArrayList<>();
         balances = new ArrayList<>();
-        loadData();
+        transHist = new ArrayList<>();
+        loadSummaryData();
         updateCats();
     }
 
-    private void loadData() {
+    private void loadSummaryData() {
         if(categories.size() == 0) {
-            Map<String, ?> map = sharedPref.getAll();
+            Map<String, ?> map = sharedPrefSumm.getAll();
             for(Map.Entry<String, ?> entry : map.entrySet()) {
                 categories.add(entry.getKey());
                 balances.add((Integer) entry.getValue());
             }
         }
+    }
+
+    private void updateTrans() {
+        transHistArr = sharedPrefLog.getString("0", "").split(",");
+        adapter1 = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transHistArr);
+        ListView list = (ListView) findViewById(R.id.transactions);
+        list.setAdapter(adapter1);
     }
 
     private void updateCats() {
@@ -86,6 +104,7 @@ public class MainActivity extends AppCompatActivity
         ListView list = (ListView) findViewById(R.id.sections);
         list.setAdapter(adapter);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -126,7 +145,7 @@ public class MainActivity extends AppCompatActivity
             if(resultCode == RESULT_OK) {
                 categories.add(data.getStringExtra("name"));
                 balances.add(data.getIntExtra("budget", 0));
-                SharedPreferences.Editor editor = sharedPref.edit();
+                SharedPreferences.Editor editor = sharedPrefSumm.edit();
                 editor.putInt(data.getStringExtra("name"), data.getIntExtra("budget", 0));
                 editor.commit();
                 updateCats();
@@ -134,7 +153,22 @@ public class MainActivity extends AppCompatActivity
             }
         } else if(requestCode == 2) {
             if(resultCode == RESULT_OK) {
-                
+                transHist.add(data.getStringExtra("category") + " : " + data.getIntExtra("spent", 0));
+                SharedPreferences.Editor editor = sharedPrefLog.edit();
+                editor.putString("0", sharedPrefLog.getString("0", "") + "," +
+                        data.getStringExtra("category") + " : " + data.getIntExtra("spent", 0));
+                editor.commit();
+                SharedPreferences.Editor editor1 = sharedPrefSumm.edit();
+                int temp = sharedPrefSumm.getInt(data.getStringExtra("category"), 0);
+                if(temp != 0) {
+                    editor1.putInt(data.getStringExtra("category"), (temp - data.getIntExtra("spent", 0)));
+                }
+                editor1.commit();
+                categories = new ArrayList<>();
+                balances = new ArrayList<>();
+                loadSummaryData();
+                updateCats();
+                updateTrans();
             }
         }
     }
@@ -152,6 +186,8 @@ public class MainActivity extends AppCompatActivity
             fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_expenses) {
             vf.setDisplayedChild(1);
+            transHist = new ArrayList<>();
+            updateTrans();
             tb.getMenu().findItem(R.id.add_category).setVisible(false);
             fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_settings) {

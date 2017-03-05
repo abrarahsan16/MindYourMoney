@@ -30,7 +30,7 @@ public class NewCat extends Activity {
 
     public void submit(View view) {
         Intent in = new Intent();
-        in.putExtra("name", cat.getText().toString());
+        in.putExtra("name", cat.getText().toString().split(" ")[0]);
         in.putExtra("budget", Integer.parseInt(bal.getText().toString()));
         setResult(RESULT_OK, in);
         finish();

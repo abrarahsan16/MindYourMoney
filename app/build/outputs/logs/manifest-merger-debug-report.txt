@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:2:1-37:12
+ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:2:1-38:12
 	package
 		ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:3:5-57
 		INJECTED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidM
 		INJECTED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:5:5-35:19
+ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:5:5-36:19
 MERGED from [com.android.support:design:25.2.0] /Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] /Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.2.0] /Users/colinmarsch/.android/build-cache/07e877dad9fd4cbb4a9fc7041b186e1fab919508/output/AndroidManifest.xml:22:5-20
@@ -81,6 +81,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:32:17-77
 	android:name
 		ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:32:27-74
+activity#me.colinmarsch.simpleweather.mindyourmoney.Payment
+ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:35:9-45
+	android:name
+		ADDED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml:35:19-42
 uses-sdk
 INJECTED from /Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.2.0] /Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/AndroidManifest.xml:21:5-23:62

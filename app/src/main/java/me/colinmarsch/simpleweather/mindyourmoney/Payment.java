@@ -26,8 +26,8 @@ public class Payment extends Activity {
 
     public void submit(View view) {
         Intent in = new Intent();
-        in.putExtra("name", cat.getText().toString());
-        in.putExtra("budget", Integer.parseInt(payment.getText().toString()));
+        in.putExtra("category", cat.getText().toString().split(" ")[0]);
+        in.putExtra("spent", Integer.parseInt(payment.getText().toString()));
         setResult(RESULT_OK, in);
         finish();
     }
