@@ -13,8 +13,6 @@
         android:id="@+id/transactions"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:divider="@color/colorAccent"
-        tools:layout_editor_absoluteY="-56dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:divider="@color/colorAccent"/>
 
 </android.support.constraint.ConstraintLayout>

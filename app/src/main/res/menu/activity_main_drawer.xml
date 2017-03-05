@@ -4,10 +4,10 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_summary"
-            android:title="Summary" />
+            android:title="Overview" />
         <item
             android:id="@+id/nav_expenses"
-            android:title="Expenses" />
+            android:title="Transactions" />
         <item
             android:id="@+id/nav_settings"
             android:title="Settings" />

@@ -35,7 +35,7 @@ public class CategoryListAdapter extends ArrayAdapter<String> {
         TextView remaining_bal = (TextView) rowView.findViewById(R.id.balance);
 
         title.setText(categories[position]);
-        remaining_bal.setText(balances[position].toString());
+        remaining_bal.setText("$" + balances[position].toString());
         return rowView;
     }
 }

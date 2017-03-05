@@ -19,15 +19,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Map;
-
-import static java.lang.reflect.Array.get;
-import static java.lang.reflect.Array.getInt;
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.fab;
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.name_field;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,6 +43,9 @@ public class MainActivity extends AppCompatActivity
     SharedPreferences sharedPrefLog;
     String name;
     int budget_val;
+    String date;
+    int timeFrame;
+    int catTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +57,11 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        toolbar.setTitle("Overview");
         name = getIntent().getStringExtra("name");
         budget_val = Integer.parseInt(getIntent().getStringExtra("budget"));
+        timeFrame = Integer.parseInt(getIntent().getStringExtra("timeFrame"));
+        date = getIntent().getStringExtra("date");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -161,36 +159,55 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 1) {
             if(resultCode == RESULT_OK) {
-                categories.add(data.getStringExtra("name"));
-                balances.add(data.getIntExtra("budget", 0));
-                SharedPreferences.Editor editor = sharedPrefSumm.edit();
-                editor.putInt(data.getStringExtra("name"), data.getIntExtra("budget", 0));
-                editor.commit();
-                updateCats();
-                adapter.notifyDataSetChanged();
+                if((catTotal + data.getIntExtra("budget", 0)) > budget_val) {
+                    Snackbar.make(findViewById(android.R.id.content),
+                            "Adding that would put you over budget!",
+                            Snackbar.LENGTH_LONG).show();
+                } else {
+                    categories.add(data.getStringExtra("name"));
+                    balances.add(data.getIntExtra("budget", 0));
+                    SharedPreferences.Editor editor = sharedPrefSumm.edit();
+                    editor.putInt(data.getStringExtra("name"), data.getIntExtra("budget", 0));
+                    editor.commit();
+                    catTotal += data.getIntExtra("budget", 0);
+                    updateCats();
+                    adapter.notifyDataSetChanged();
+                }
             }
         } else if(requestCode == 2) {
             if(resultCode == RESULT_OK) {
-                transHist.add(data.getStringExtra("category") + " : " + data.getIntExtra("spent", 0));
-                SharedPreferences.Editor editor = sharedPrefLog.edit();
-                editor.putString("0", sharedPrefLog.getString("0", "") + "," +
-                        data.getStringExtra("category") + " : " + data.getIntExtra("spent", 0));
-                editor.commit();
-                SharedPreferences.Editor editor1 = sharedPrefSumm.edit();
-                int temp = sharedPrefSumm.getInt(data.getStringExtra("category"), 0);
-                if(temp - data.getIntExtra("spent", 0) < 0) {
+                if(sharedPrefSumm.getInt(data.getStringExtra("category"), -1) == -1) {
                     Snackbar.make(findViewById(android.R.id.content),
-                            "You exceeded the budget for " + data.getStringExtra("category"),
+                            "Add the category on the top of the overview first!",
                             Snackbar.LENGTH_LONG).show();
-                } else if(temp != 0) {
-                    editor1.putInt(data.getStringExtra("category"), (temp - data.getIntExtra("spent", 0)));
+                } else {
+                    transHist.add(data.getStringExtra("category") + " : " + data.getIntExtra("spent", 0));
+                    SharedPreferences.Editor editor = sharedPrefLog.edit();
+                    if(sharedPrefLog.getString("0", "").equals("")) {
+                        editor.putString("0", data.getStringExtra("category") + " : $" + data.getIntExtra("spent", 0));
+                    } else {
+                        editor.putString("0", sharedPrefLog.getString("0", "") + "," +
+                                data.getStringExtra("category") + " : $" + data.getIntExtra("spent", 0));
+                    }
+                    System.out.println(sharedPrefLog.getString("0", "") + "," +
+                            data.getStringExtra("category") + " : $" + data.getIntExtra("spent", 0));
+                    editor.commit();
+                    SharedPreferences.Editor editor1 = sharedPrefSumm.edit();
+                    int temp = sharedPrefSumm.getInt(data.getStringExtra("category"), 0);
+                    if(temp - data.getIntExtra("spent", 0) < 0) {
+                        Snackbar.make(findViewById(android.R.id.content),
+                                "You exceeded the budget for " + data.getStringExtra("category"),
+                                Snackbar.LENGTH_LONG).show();
+                    } else if(temp != 0) {
+                        editor1.putInt(data.getStringExtra("category"), (temp - data.getIntExtra("spent", 0)));
+                    }
+                    editor1.commit();
+                    categories = new ArrayList<>();
+                    balances = new ArrayList<>();
+                    loadSummaryData();
+                    updateCats();
+                    updateTrans();
                 }
-                editor1.commit();
-                categories = new ArrayList<>();
-                balances = new ArrayList<>();
-                loadSummaryData();
-                updateCats();
-                updateTrans();
             }
         }
     }
@@ -204,16 +221,19 @@ public class MainActivity extends AppCompatActivity
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         if (id == R.id.nav_summary) {
             vf.setDisplayedChild(0);
+            getSupportActionBar().setTitle("Overview");
             tb.getMenu().findItem(R.id.add_category).setVisible(true);
             fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_expenses) {
             vf.setDisplayedChild(1);
             transHist = new ArrayList<>();
             updateTrans();
+            getSupportActionBar().setTitle("Transactions");
             tb.getMenu().findItem(R.id.add_category).setVisible(false);
             fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_settings) {
             vf.setDisplayedChild(2);
+            getSupportActionBar().setTitle("Settings");
             tb.getMenu().findItem(R.id.add_category).setVisible(false);
             fab.setVisibility(View.GONE);
         }
