@@ -3,6 +3,9 @@ package me.colinmarsch.simpleweather.mindyourmoney;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +22,17 @@ public class dateRange extends AppCompatActivity {
     static final int DIALOG_ID= 0;
     EditText edtext = (EditText) findViewById(R.id.editText2);
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_range);
+        final Calendar cal= Calendar.getInstance();
+        nYear=cal.get(Calendar.YEAR);
+        nMonth=cal.get(Calendar.MONTH);
+        nDay=cal.get(Calendar.DAY_OF_MONTH);
+
+
         showDialogButtonClick();
         int year, month, day;
 
