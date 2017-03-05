@@ -28,6 +28,7 @@ public class budget extends AppCompatActivity {
             btnCompi.putExtra("date", date);
             btnCompi.putExtra("timeFrame", timeFrame);
             startActivity(btnCompi);
+            finish();
         }
         editText = (EditText) findViewById(R.id.budget_input);
         Button btnComp = (Button) findViewById(R.id.btnComplete);
@@ -44,6 +45,7 @@ public class budget extends AppCompatActivity {
                     editor.putString("budget", editText.getText().toString());
                     editor.commit();
                     startActivity(btnCompi);
+                    finish();
                 } else {
                     Snackbar.make(findViewById(android.R.id.content), "Are you sure you filled all the fields?", Snackbar.LENGTH_LONG)
                             .show();

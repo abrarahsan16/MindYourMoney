@@ -15,12 +15,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import static android.R.attr.data;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.budget_field;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -78,16 +83,13 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        updateBudget().setNavigationItemSelectedListener(this);
         sharedPrefSumm = this.getSharedPreferences(SUMM_PREFERENCE_FILE_KEY, MODE_PRIVATE);
         sharedPrefLog = this.getSharedPreferences(LOG_PREFERENCE_FILE_KEY, MODE_PRIVATE);
 
-        View hView = navigationView.getHeaderView(0);
-        TextView name_field = (TextView) hView.findViewById(R.id.name_here);
-        TextView budget_field = (TextView) hView.findViewById(R.id.budget_field);
+        TextView name_field = (TextView) updateBudget().getHeaderView(0).findViewById(R.id.name_here);
         name_field.setText(name);
-        budget_field.setText(budget_val + "");
+
 
         categories = new ArrayList<>();
         balances = new ArrayList<>();
@@ -96,6 +98,13 @@ public class MainActivity extends AppCompatActivity
         updateCats();
     }
 
+    private NavigationView updateBudget() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView = navigationView.getHeaderView(0);
+        TextView budget_field = (TextView) hView.findViewById(R.id.budget_field);
+        budget_field.setText(budget_val + "");
+        return navigationView;
+    }
     private void loadSummaryData() {
         if(categories.size() == 0) {
             Map<String, ?> map = sharedPrefSumm.getAll();
@@ -210,6 +219,15 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         }
+    }
+
+    public void submit(View view) {
+        EditText new_budget = (EditText) findViewById(R.id.new_budget);
+        EditText new_timeFrame = (EditText) findViewById(R.id.new_timeFrame);
+        budget_val = Integer.parseInt(new_budget.getText().toString());
+        timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
+        Snackbar.make(findViewById(android.R.id.content), "Values updated!", Snackbar.LENGTH_SHORT).show();
+        updateBudget();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

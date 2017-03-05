@@ -1,4 +1,4 @@
-#Sun Mar 05 09:18:19 EST 2017
+#Sun Mar 05 10:31:45 EST 2017
 base.0=/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_b66440e67fc56832f7e6716ef0ad3339075e339d
 renamed.1=classes.dex
 renamed.0=classes2.dex

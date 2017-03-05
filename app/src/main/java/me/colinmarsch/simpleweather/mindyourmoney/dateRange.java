@@ -48,6 +48,7 @@ public class dateRange extends AppCompatActivity {
             budget.putExtra("date", sharedPref.getString("date", ""));
             budget.putExtra("timeFrame", sharedPref.getString("timeFrame", ""));
             startActivity(budget);
+            finish();
         }
         Button btn2 = (Button) findViewById(R.id.btnNext2);
         //Action when pressed
@@ -66,6 +67,7 @@ public class dateRange extends AppCompatActivity {
                     editor.commit();
                     budget.putExtra("name", name);
                     startActivity(budget);
+                    finish();
                 }
             }
         });

@@ -26,6 +26,7 @@ public class Start extends AppCompatActivity {
         if(!sharedPref.getString("name", "").equals("")) {
             date.putExtra("name", sharedPref.getString("name", ""));
             startActivity(date);
+            finish();
         }
         //Call the button
         Button btn = (Button) findViewById(R.id.btnNext);
@@ -39,6 +40,7 @@ public class Start extends AppCompatActivity {
                     editor.putString("name", et.getText().toString());
                     editor.commit();
                     startActivity(date);
+                    finish();
                 } else {
                     Snackbar.make(findViewById(android.R.id.content), "Are you sure you filled all the fields?", Snackbar.LENGTH_LONG)
                             .show();
