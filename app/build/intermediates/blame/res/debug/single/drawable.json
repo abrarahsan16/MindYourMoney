@@ -148,6 +148,10 @@
         "source": "/Users/colinmarsch/.android/build-cache/d31b81129c606b4080c447a7023b024a4ac8ee00/output/res/drawable/design_bottom_navigation_item_background.xml"
     },
     {
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable/logo.jpg",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/drawable/logo.jpg"
+    },
+    {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/drawable/abc_edit_text_material.xml"
     },

@@ -24,6 +24,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.Map;
 
+import static java.lang.reflect.Array.get;
 import static java.lang.reflect.Array.getInt;
 import static me.colinmarsch.simpleweather.mindyourmoney.R.id.fab;
 import static me.colinmarsch.simpleweather.mindyourmoney.R.id.name_field;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     SharedPreferences sharedPrefSumm;
     SharedPreferences sharedPrefLog;
     String name;
+    int budget_val;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         name = getIntent().getStringExtra("name");
+        budget_val = Integer.parseInt(getIntent().getStringExtra("budget"));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +87,9 @@ public class MainActivity extends AppCompatActivity
 
         View hView = navigationView.getHeaderView(0);
         TextView name_field = (TextView) hView.findViewById(R.id.name_here);
+        TextView budget_field = (TextView) hView.findViewById(R.id.budget_field);
         name_field.setText(name);
+        budget_field.setText(budget_val + "");
 
         categories = new ArrayList<>();
         balances = new ArrayList<>();
