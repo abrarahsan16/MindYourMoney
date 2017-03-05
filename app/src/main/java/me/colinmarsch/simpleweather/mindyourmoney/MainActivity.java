@@ -103,8 +103,10 @@ public class MainActivity extends AppCompatActivity
     }
     private void loadSummaryData() {
         if(categories.size() == 0) {
+            catTotal = 0;
             Map<String, ?> map = sharedPrefSumm.getAll();
             for(Map.Entry<String, ?> entry : map.entrySet()) {
+                catTotal += (Integer) entry.getValue();
                 categories.add(entry.getKey());
                 balances.add((Integer) entry.getValue());
             }
@@ -222,19 +224,29 @@ public class MainActivity extends AppCompatActivity
     public void submit(View view) {
         EditText new_budget = (EditText) findViewById(R.id.new_budget);
         EditText new_timeFrame = (EditText) findViewById(R.id.new_timeFrame);
-        if(!new_budget.getText().toString().equals("")) {
-            budget_val = Integer.parseInt(new_budget.getText().toString());
-        }
-        if(!new_timeFrame.getText().toString().equals("")) {
-            timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
-        }
-        if(new_budget.getText().toString().equals("") || new_timeFrame.getText().toString().equals("")) {
+        if(Integer.parseInt(new_budget.getText().toString()) < catTotal) {
+            Snackbar.make(findViewById(android.R.id.content),
+                    "The new budget can't be less than the sum of the categories budget's", Snackbar.LENGTH_LONG).show();
+        } else if(new_budget.getText().toString().equals("") || new_timeFrame.getText().toString().equals("")) {
             Snackbar.make(findViewById(android.R.id.content),
                     "Fields left blank have not had their values changed", Snackbar.LENGTH_LONG).show();
+            if(!new_budget.getText().toString().equals("")) {
+                budget_val = Integer.parseInt(new_budget.getText().toString());
+            }
+            if(!new_timeFrame.getText().toString().equals("")) {
+                timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
+            }
+            updateBudget();
         } else {
             Snackbar.make(findViewById(android.R.id.content), "Values updated!", Snackbar.LENGTH_SHORT).show();
+            if(!new_budget.getText().toString().equals("")) {
+                budget_val = Integer.parseInt(new_budget.getText().toString());
+            }
+            if(!new_timeFrame.getText().toString().equals("")) {
+                timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
+            }
+            updateBudget();
         }
-        updateBudget();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
