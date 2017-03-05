@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView = navigationView.getHeaderView(0);
         TextView budget_field = (TextView) hView.findViewById(R.id.budget_field);
-        budget_field.setText(budget_val + "");
+        budget_field.setText("$" + budget_val + " remaining");
         return navigationView;
     }
     private void loadSummaryData() {
@@ -209,12 +209,14 @@ public class MainActivity extends AppCompatActivity
                                 Snackbar.LENGTH_LONG).show();
                     } else if(temp != 0) {
                         editor1.putInt(data.getStringExtra("category"), (temp - data.getIntExtra("spent", 0)));
+                        budget_val -= data.getIntExtra("spent", 0);
                     }
                     editor1.commit();
                     categories = new ArrayList<>();
                     balances = new ArrayList<>();
                     loadSummaryData();
                     updateCats();
+                    updateBudget();
                     updateTrans();
                 }
             }
@@ -235,7 +237,6 @@ public class MainActivity extends AppCompatActivity
                     "Fields left blank have not had their values changed", Snackbar.LENGTH_LONG).show();
         } else {
             Snackbar.make(findViewById(android.R.id.content), "Values updated!", Snackbar.LENGTH_SHORT).show();
-
         }
         updateBudget();
     }
