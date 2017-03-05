@@ -1,6 +1,7 @@
 package me.colinmarsch.simpleweather.mindyourmoney;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 import android.widget.ViewFlipper;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity
     String[] sections;
     Integer[] sums;
     CategoryListAdapter adapter;
+    private static final String PREFERENCE_FILE_KEY =
+            "me.colinmarsch.simpleweather.mindyourmoney.preference-file_key";
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent in = new Intent(getApplicationContext(), Payment.class);
+                startActivityForResult(in, 2);
             }
         });
 
@@ -56,12 +61,23 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        sharedPref = this.getSharedPreferences(PREFERENCE_FILE_KEY, MODE_PRIVATE);
 
         categories = new ArrayList<>();
         balances = new ArrayList<>();
+        loadData();
         updateCats();
     }
 
+    private void loadData() {
+        if(categories.size() == 0) {
+            Map<String, ?> map = sharedPref.getAll();
+            for(Map.Entry<String, ?> entry : map.entrySet()) {
+                categories.add(entry.getKey());
+                balances.add((Integer) entry.getValue());
+            }
+        }
+    }
 
     private void updateCats() {
         sections = categories.toArray(new String[categories.size()]);
@@ -107,16 +123,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == 1) {
-            System.out.println(resultCode);
             if(resultCode == RESULT_OK) {
                 categories.add(data.getStringExtra("name"));
-                System.out.println(data.getStringExtra("name"));
                 balances.add(data.getIntExtra("budget", 0));
-                System.out.println(data.getIntExtra("budget", 0));
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt(data.getStringExtra("name"), data.getIntExtra("budget", 0));
+                editor.commit();
                 updateCats();
-                System.out.println(sums.length);
-                System.out.println(sections.length);
                 adapter.notifyDataSetChanged();
+            }
+        } else if(requestCode == 2) {
+            if(resultCode == RESULT_OK) {
+                
             }
         }
     }
