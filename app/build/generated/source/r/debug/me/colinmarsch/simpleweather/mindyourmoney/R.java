@@ -3140,7 +3140,7 @@ containing a value of this type.
         public static final int actions=0x7f0d00ac;
         public static final int activity_chooser_view_content=0x7f0d004b;
         public static final int add=0x7f0d0026;
-        public static final int add_category=0x7f0d00c0;
+        public static final int add_category=0x7f0d00bf;
         public static final int alertTitle=0x7f0d005f;
         public static final int all=0x7f0d0014;
         public static final int always=0x7f0d0041;
@@ -3180,7 +3180,6 @@ containing a value of this type.
         public static final int design_navigation_view=0x7f0d0093;
         public static final int disableHome=0x7f0d001b;
         public static final int drawer_layout=0x7f0d0082;
-        public static final int editText=0x7f0d00ba;
         public static final int editText2=0x7f0d007e;
         public static final int editText3=0x7f0d0080;
         public static final int editText4=0x7f0d007a;
@@ -3212,16 +3211,16 @@ containing a value of this type.
         public static final int line3=0x7f0d00b0;
         public static final int listMode=0x7f0d0018;
         public static final int list_item=0x7f0d004f;
-        public static final int masked=0x7f0d00bc;
+        public static final int masked=0x7f0d00bb;
         public static final int media_actions=0x7f0d00a2;
         public static final int middle=0x7f0d0040;
         public static final int mini=0x7f0d003e;
         public static final int multiply=0x7f0d0027;
         public static final int name_field=0x7f0d00b8;
         public static final int name_here=0x7f0d009a;
-        public static final int nav_expenses=0x7f0d00be;
-        public static final int nav_settings=0x7f0d00bf;
-        public static final int nav_summary=0x7f0d00bd;
+        public static final int nav_expenses=0x7f0d00bd;
+        public static final int nav_settings=0x7f0d00be;
+        public static final int nav_summary=0x7f0d00bc;
         public static final int nav_view=0x7f0d0083;
         public static final int navigation_header_container=0x7f0d0092;
         public static final int never=0x7f0d0044;
@@ -3308,7 +3307,7 @@ containing a value of this type.
         public static final int useLogo=0x7f0d0020;
         public static final int vf=0x7f0d0088;
         public static final int view_offset_helper=0x7f0d000e;
-        public static final int visible=0x7f0d00bb;
+        public static final int visible=0x7f0d00ba;
         public static final int withText=0x7f0d0045;
         public static final int wrap=0x7f0d0011;
         public static final int wrap_content=0x7f0d002c;

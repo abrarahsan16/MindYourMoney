@@ -224,9 +224,19 @@ public class MainActivity extends AppCompatActivity
     public void submit(View view) {
         EditText new_budget = (EditText) findViewById(R.id.new_budget);
         EditText new_timeFrame = (EditText) findViewById(R.id.new_timeFrame);
-        budget_val = Integer.parseInt(new_budget.getText().toString());
-        timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
-        Snackbar.make(findViewById(android.R.id.content), "Values updated!", Snackbar.LENGTH_SHORT).show();
+        if(!new_budget.getText().toString().equals("")) {
+            budget_val = Integer.parseInt(new_budget.getText().toString());
+        }
+        if(!new_timeFrame.getText().toString().equals("")) {
+            timeFrame = Integer.parseInt(new_timeFrame.getText().toString());
+        }
+        if(new_budget.getText().toString().equals("") || new_timeFrame.getText().toString().equals("")) {
+            Snackbar.make(findViewById(android.R.id.content),
+                    "Fields left blank have not had their values changed", Snackbar.LENGTH_LONG).show();
+        } else {
+            Snackbar.make(findViewById(android.R.id.content), "Values updated!", Snackbar.LENGTH_SHORT).show();
+
+        }
         updateBudget();
     }
 

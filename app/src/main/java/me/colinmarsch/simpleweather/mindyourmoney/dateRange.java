@@ -14,9 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.editText;
 
 public class dateRange extends AppCompatActivity {
     int nYear, nMonth, nDay;
