@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -160,7 +161,11 @@ public class MainActivity extends AppCompatActivity
                 editor.commit();
                 SharedPreferences.Editor editor1 = sharedPrefSumm.edit();
                 int temp = sharedPrefSumm.getInt(data.getStringExtra("category"), 0);
-                if(temp != 0) {
+                if(temp - data.getIntExtra("spent", 0) < 0) {
+                    Snackbar.make(findViewById(android.R.id.content),
+                            "You exceeded the budget for " + data.getStringExtra("category"),
+                            Snackbar.LENGTH_LONG).show();
+                } else if(temp != 0) {
                     editor1.putInt(data.getStringExtra("category"), (temp - data.getIntExtra("spent", 0)));
                 }
                 editor1.commit();

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Mar 04 23:10:08 EST 2017
+#Sun Mar 05 00:58:58 EST 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/resources-debug.ap_/res/layout/abc_screen_simple.xml
 14.set=ANDROID_RESOURCE

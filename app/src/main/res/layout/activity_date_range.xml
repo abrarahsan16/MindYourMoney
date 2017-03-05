@@ -30,15 +30,15 @@
         android:layout_height="45dp"
         android:inputType="date"
         android:layout_marginBottom="48dp"
-        android:hint="Starting Date" />
+        android:hint="Starting Date"
+        android:onClick="showDatePickerDialog" />
 
-    <!-- <Button
+    <Button
         android:id="@+id/btnCalen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
-        android:layout_marginTop="24dp"
-        android:text="Select Date" /> -->
+        android:text="Select Date" />
 
     <TextView
         android:id="@+id/editText4"

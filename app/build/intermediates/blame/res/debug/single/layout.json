@@ -16,12 +16,12 @@
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/list.xml",
-        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/layout/list.xml"
-    },
-    {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Users/colinmarsch/.android/build-cache/ae8852684f2b0926e2cda2595de1f66700462337/output/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/list.xml",
+        "source": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/src/main/res/layout/list.xml"
     },
     {
         "merged": "/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",

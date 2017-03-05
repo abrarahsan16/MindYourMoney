@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="me.colinmarsch.simpleweather.mindyourmoney.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:paddingTop="?attr/actionBarSize">
 
     <ListView
         android:id="@+id/sections"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/colorAccent"
-        android:translationY="?attr/actionBarSize"/>
+        android:divider="@color/colorAccent" />
 
 </android.support.constraint.ConstraintLayout>
