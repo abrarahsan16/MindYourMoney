@@ -12,13 +12,14 @@ public class budget extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget);
-
+        final String name = getIntent().getStringExtra("name");
         Button btnComp = (Button) findViewById(R.id.btnComplete);
         //Action when pressed
         btnComp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent btnComp = new Intent(budget.this, MainActivity.class);
+                btnComp.putExtra("name", name);
                 startActivity(btnComp);
             }
         });

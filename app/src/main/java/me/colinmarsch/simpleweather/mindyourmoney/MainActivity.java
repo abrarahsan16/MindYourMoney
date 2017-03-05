@@ -16,12 +16,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 import static java.lang.reflect.Array.getInt;
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.fab;
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.name_field;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity
             "me.colinmarsch.simpleweather.mindyourmoney.log_key";
     SharedPreferences sharedPrefSumm;
     SharedPreferences sharedPrefLog;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +59,8 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        name = getIntent().getStringExtra("name");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +81,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         sharedPrefSumm = this.getSharedPreferences(SUMM_PREFERENCE_FILE_KEY, MODE_PRIVATE);
         sharedPrefLog = this.getSharedPreferences(LOG_PREFERENCE_FILE_KEY, MODE_PRIVATE);
+
+        View hView = navigationView.getHeaderView(0);
+        TextView name_field = (TextView) hView.findViewById(R.id.name_here);
+        name_field.setText(name);
 
         categories = new ArrayList<>();
         balances = new ArrayList<>();

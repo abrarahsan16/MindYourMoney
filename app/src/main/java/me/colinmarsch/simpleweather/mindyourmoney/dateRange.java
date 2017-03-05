@@ -3,6 +3,9 @@ package me.colinmarsch.simpleweather.mindyourmoney;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,15 +22,21 @@ public class dateRange extends AppCompatActivity {
     static final int DIALOG_ID= 0;
     EditText edtext;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_range);
-        showDialogButtonClick();
+        final Calendar cal= Calendar.getInstance();
+        nYear=cal.get(Calendar.YEAR);
+        nMonth=cal.get(Calendar.MONTH);
+        nDay=cal.get(Calendar.DAY_OF_MONTH);
+
         edtext = (EditText) findViewById(R.id.editText2);
+        showDialogButtonClick();
         int year, month, day;
 
-
+        final String name = getIntent().getStringExtra("name");
 
         Button btn2 = (Button) findViewById(R.id.btnNext2);
         //Action when pressed
@@ -35,6 +44,7 @@ public class dateRange extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent budget = new Intent(dateRange.this, budget.class);
+                budget.putExtra("name", name);
                 startActivity(budget);
             }
         });
@@ -68,7 +78,7 @@ public class dateRange extends AppCompatActivity {
             nYear=year;
             nMonth=monthOfYear;
             nDay=dayOfMonth;
-            edtext.setText(new StringBuilder().append(nDay).append("/").append(nMonth).append("/").append(nYear));
+            edtext.setText(new StringBuilder().append(nDay).append("/").append(nMonth + 1).append("/").append(nYear));
         }
     };
 }
