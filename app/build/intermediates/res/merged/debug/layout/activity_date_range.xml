@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="me.colinmarsch.simpleweather.mindyourmoney.budget">
+
+    <ImageView
+        android:src="@drawable/ic_plus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#3F51B5"
+        android:textSize="30sp"
+        android:layout_marginBottom="24dp"
+        android:text="What time frame?"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="194dp"
+        android:layout_height="45dp"
+        android:inputType="date"
+        android:layout_marginBottom="48dp"
+        android:hint="Starting Date" />
+
+    <!-- <Button
+        android:id="@+id/btnCalen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="24dp"
+        android:text="Select Date" /> -->
+
+    <TextView
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:textColor="#3F51B5"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginBottom="24dp"
+        android:inputType="textPersonName"
+        android:text="This budget will be valid for:" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:inputType="date"
+        android:hint="Number of days" />
+
+    <Button
+        android:id="@+id/btnNext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Next" />
+
+</LinearLayout>

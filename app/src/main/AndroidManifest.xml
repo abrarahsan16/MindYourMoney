@@ -13,13 +13,25 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".NewCat"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".budget"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".dateRange"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Start"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewCat" />
     </application>
 
 </manifest>

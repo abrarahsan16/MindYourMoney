@@ -2,26 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:gravity="center"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What category would like to add?"/>
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        android:text="What category would you like to add?"/>
 
     <EditText
         android:id="@+id/new_cat"
         android:layout_width="match_parent"
+        android:layout_marginBottom="24dp"
+        android:hint="Category Name"
         android:layout_height="wrap_content" />
 
     <TextView
         android:layout_width="wrap_content"
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:text="How much would you like it's budget to be?"/>
 
     <EditText
         android:id="@+id/new_bal"
         android:layout_width="match_parent"
+        android:layout_marginBottom="24dp"
+        android:inputType="number"
+        android:hint="Budget Amount ($)"
         android:layout_height="wrap_content" />
 
     <Button

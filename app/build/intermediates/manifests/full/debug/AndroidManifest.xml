@@ -19,13 +19,25 @@
             android:name="me.colinmarsch.simpleweather.mindyourmoney.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name="me.colinmarsch.simpleweather.mindyourmoney.NewCat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="me.colinmarsch.simpleweather.mindyourmoney.budget"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="me.colinmarsch.simpleweather.mindyourmoney.dateRange"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="me.colinmarsch.simpleweather.mindyourmoney.Start"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="me.colinmarsch.simpleweather.mindyourmoney.NewCat" />
     </application>
 
 </manifest>
