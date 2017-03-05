@@ -1,10 +1,9 @@
 package me.colinmarsch.simpleweather.mindyourmoney;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,16 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.ViewFlipper;
 
-import static android.R.attr.fragment;
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.fab;
-import static me.colinmarsch.simpleweather.mindyourmoney.R.id.vf;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ViewFlipper vf;
+    ArrayList<String> categories;
+    ArrayList<Integer> balances;
+    String[] sections;
+    Integer[] sums;
+    CategoryListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +56,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        categories = new ArrayList<>();
+        balances = new ArrayList<>();
+        updateCats();
     }
 
+
+    private void updateCats() {
+        sections = categories.toArray(new String[categories.size()]);
+        sums = balances.toArray(new Integer[balances.size()]);
+        adapter = new CategoryListAdapter(this, sections, sums);
+        ListView list = (ListView) findViewById(R.id.sections);
+        list.setAdapter(adapter);
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -81,10 +96,29 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.add_category) {
+            Intent in = new Intent(this, NewCat.class);
+            startActivityForResult(in, 1);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 1) {
+            System.out.println(resultCode);
+            if(resultCode == RESULT_OK) {
+                categories.add(data.getStringExtra("name"));
+                System.out.println(data.getStringExtra("name"));
+                balances.add(data.getIntExtra("budget", 0));
+                System.out.println(data.getIntExtra("budget", 0));
+                updateCats();
+                System.out.println(sums.length);
+                System.out.println(sections.length);
+                adapter.notifyDataSetChanged();
+            }
+        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

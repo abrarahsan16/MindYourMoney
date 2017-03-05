@@ -6,33 +6,30 @@
     density="xxxhdpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1488663664905"
+    timestamp="1488673202981"
     token="-3037742068344014757"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="214" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="30" />
+        duration="0" />
     <task
         name="verifier"
-        duration="5" />
+        duration="0" />
 
-    <artifact
-        location="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
     <artifact
         location="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/outputs/apk/app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1488662140973"
+        timestamp="1488670951705"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
@@ -73,11 +70,16 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1488663664905"
+        timestamp="1488672416011"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1488673202981"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/colinmarsch/StudioProjects/MindYourMoney/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
