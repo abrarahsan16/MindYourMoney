@@ -8,18 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import static me.colinmarsch.simpleweather.mindyourmoney.R.id.editText;
 
 public class dateRange extends AppCompatActivity {
     int nYear, nMonth, nDay;
     Button btnDate;
     static final int DIALOG_ID= 0;
+    EditText edtext = (EditText) findViewById(R.id.editText2);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showDialogButtonClick();
         setContentView(R.layout.activity_date_range);
+        showDialogButtonClick();
         int year, month, day;
 
 
@@ -37,6 +41,7 @@ public class dateRange extends AppCompatActivity {
 
     }
     public void showDialogButtonClick() {
+
         btnDate=(Button) findViewById(R.id.btnCalen);
         btnDate.setOnClickListener(new View.OnClickListener()
         {
@@ -62,7 +67,7 @@ public class dateRange extends AppCompatActivity {
             nYear=year;
             nMonth=monthOfYear;
             nDay=dayOfMonth;
-            Toast.makeText(dateRange.this, nYear+"/"+nMonth+"/"+nDay, Toast.LENGTH_SHORT).show();
+                edtext.setText(new StringBuilder().append(nDay).append("/").append(nMonth).append("/").append(nYear));
         }
         };
     }
